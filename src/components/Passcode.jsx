@@ -1,6 +1,6 @@
 import { useState } from "react";
 import FancyButton from "./FancyButton";
-import "../Passcode.css"; // 👈 make sure this file exists
+import "../passcode.css"; // 👈 make sure this file exists
 
 export default function Passcode({ onSuccess }) {
   const [code, setCode] = useState("");
