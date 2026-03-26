@@ -6,8 +6,10 @@ import FancyButton from "./components/FancyButton";
 import LoveQuestion from "./components/LoveQuestion";
 import Passcode from "./components/Passcode";
 import LoveLetter from "./components/LoveLetter";
-import MapView from "./components/Map"
-import Gallery from "./components/Gallery";
+import MapView from "./components/Map";
+import FutureSection from "./components/FutureSection";
+import FramesSection from "./components/FramesSection";
+import FinalSection from "./components/FinalSection";
 import "leaflet/dist/leaflet.css";
 
 export default function App() {
@@ -22,9 +24,6 @@ export default function App() {
     },
   };
 
-  // Debug (remove later if not needed)
-  console.log("Current step:", step);
-
   return (
     <div style={styles.container}>
       <FloatingHearts />
@@ -33,14 +32,14 @@ export default function App() {
       {step === 1 && (
         <Page>
           <h1
-          style={{
-            background: "linear-gradient(45deg, #6171a9, #f9abd2)",
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
-          }}
-        >
-          Hi Babs! I made this for you 💖
-        </h1>
+            style={{
+              background: "linear-gradient(45deg, #6171a9, #f9abd2)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+            }}
+          >
+            Hi Babs! I made this for you 💖
+          </h1>
           <FancyButton onClick={() => setStep(2)}>Start</FancyButton>
         </Page>
       )}
@@ -60,24 +59,35 @@ export default function App() {
       {step === 4 && (
         <Page>
           <LoveLetter />
-          <FancyButton onClick={() => setStep(5)}>Next 🌍</FancyButton>
+          <FancyButton onClick={() => setStep(5)}>I Promise 💕</FancyButton>
         </Page>
       )}
 
+      {/* 🌍 STEP 5 — MAP (AUTO TRANSITION) */}
       {step === 5 && (
         <Page>
-          <MapView />
-          <p>
-            {"\n\n"}
-
-          </p>
-          <FancyButton onClick={() => setStep(6)}>Next 🖼️</FancyButton>
+          <MapView onFinish={() => setStep(6)} />
         </Page>
       )}
 
+      {/* ✨ STEP 6 — FUTURE */}
       {step === 6 && (
         <Page>
-          <Gallery />
+          <FutureSection onNext={() => setStep(7)} />
+        </Page>
+      )}
+
+      {/* 🖼️ STEP 7 — FRAMES */}
+      {step === 7 && (
+        <Page>
+          <FramesSection onNext={() => setStep(8)} />
+        </Page>
+      )}
+
+      {/* 💞 STEP 8 — FINAL */}
+      {step === 8 && (
+        <Page>
+          <FinalSection />
         </Page>
       )}
     </div>

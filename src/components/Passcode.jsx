@@ -44,7 +44,7 @@ export default function Passcode({ onSuccess }) {
       </p>
 
       <input
-        type="text"
+        type="password"
         value={code}
         onChange={(e) => setCode(e.target.value)}
         placeholder="Enter code"
