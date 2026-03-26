@@ -13,7 +13,6 @@ export default function FutureSection({ onNext }) {
   useEffect(() => {
     setTimeout(() => setShow(true), 800);
 
-    // ⏳ total time = (cards * delay) + extra reading time
     const totalTime = cards.length * 2200 + 4000;
 
     const timer = setTimeout(() => {
@@ -32,7 +31,7 @@ export default function FutureSection({ onNext }) {
           <div
             key={i}
             className={`card ${show ? "show" : ""}`}
-            style={{ animationDelay: `${i * 2.2}s` }} // ⬅️ slower reveal
+            style={{ animationDelay: `${i * 2.2}s` }}
           >
             {text}
           </div>
@@ -65,6 +64,8 @@ export default function FutureSection({ onNext }) {
           backdrop-filter: blur(10px);
           opacity: 0;
           transform: translateY(40px);
+          font-size: 16px;
+          line-height: 1.5;
         }
 
         .card.show {
@@ -81,6 +82,29 @@ export default function FutureSection({ onNext }) {
         @keyframes fadeIn {
           from { opacity: 0; }
           to { opacity: 1; }
+        }
+
+        /* 📱 MOBILE FIXES */
+        @media (max-width: 600px) {
+          .future-container {
+            padding: 20px;
+          }
+
+          .title {
+            font-size: 22px;
+            margin-bottom: 20px;
+          }
+
+          .cards {
+            grid-template-columns: 1fr; /* single column */
+            gap: 15px;
+          }
+
+          .card {
+            padding: 16px;
+            font-size: 15px;
+            border-radius: 16px;
+          }
         }
       `}</style>
     </div>

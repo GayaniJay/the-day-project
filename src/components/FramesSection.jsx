@@ -44,6 +44,28 @@ export default function FramesSection({ onNext }) {
           50% { opacity: 1; }
           100% { opacity: 0.5; }
         }
+
+        /* 📱 MOBILE FIXES */
+        @media (max-width: 600px) {
+          .frames-container {
+            padding: 20px;
+          }
+
+          .frames-container h2 {
+            font-size: 20px;
+            line-height: 1.4;
+          }
+
+          .frames {
+            grid-template-columns: repeat(2, 1fr); /* 2 per row */
+            gap: 15px;
+          }
+
+          .frame {
+            height: 100px;
+            border-radius: 12px;
+          }
+        }
       `}</style>
     </div>
   );

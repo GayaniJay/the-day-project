@@ -46,6 +46,9 @@ export default function Passcode({ onSuccess }) {
       <input
         type="password"
         value={code}
+        inputMode="numeric"
+        pattern="[0-9]*"
+        maxLength={4}
         onChange={(e) => setCode(e.target.value)}
         placeholder="Enter code"
         className={`passcode-input ${shake ? "shake" : ""}`}

@@ -33,11 +33,6 @@ export default function LoveLetter() {
         ))}
       </div>
 
-      {/* 🎵 Music */}
-      <audio ref={audioRef} loop autoPlay playsInline>
-        <source src={music} type="audio/mp3" />
-      </audio>
-
       <div className="letter-box">
         <p>
           Happy Birthday, My Love ❤️🌏🎂<br></br><br></br>
@@ -53,7 +48,7 @@ You take care of me in ways I never imagined someone would. You notice the small
 
 I am so lucky to have you and So lucky to be loved by you. I just want to remind you that you are my safe place, my happiness, my peace, my everything. There is no world for me without you in it.<br></br><br></br>
 
-Happy birthday once again to my ONE and ONLY 💕<br></br><br></br>
+Happy Birthday once again to my ONE and ONLY 💕<br></br><br></br>
 
 Okay, enough of the clingy yet lovely talk 😜 just promise me we’re forever like this ❤️<br></br><br></br>
         </p>

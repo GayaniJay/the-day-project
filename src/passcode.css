@@ -28,6 +28,7 @@
   border: 2px solid #ffb3c1;
   outline: none;
   transition: all 0.3s ease;
+  align-self: center;
 }
 
 /* Focus effect */

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import Page from "./components/Page";
 import FloatingHearts from "./components/FloatingHearts";
 import Sparkles from "./components/Sparkles";
@@ -11,9 +11,26 @@ import FutureSection from "./components/FutureSection";
 import FramesSection from "./components/FramesSection";
 import FinalSection from "./components/FinalSection";
 import "leaflet/dist/leaflet.css";
+import music from "./assets/music.mp3"; // ✅ ADDED
+
 
 export default function App() {
   const [step, setStep] = useState(1);
+
+  const audioRef = useRef(null); // ✅ ADDED
+
+  useEffect(() => { // ✅ ADDED
+    const audio = audioRef.current;
+
+    const playMusic = () => {
+      audio.play();
+      document.removeEventListener("click", playMusic);
+    };
+
+    audio.play().catch(() => {
+      document.addEventListener("click", playMusic);
+    });
+  }, []);
 
   const styles = {
     container: {
@@ -28,6 +45,11 @@ export default function App() {
     <div style={styles.container}>
       <FloatingHearts />
       <Sparkles />
+
+      {/* 🎵 GLOBAL MUSIC (ADDED — does not remove anything) */}
+      <audio ref={audioRef} loop autoPlay playsInline>
+        <source src={music} type="audio/mp3" />
+      </audio>
 
       {step === 1 && (
         <Page>
