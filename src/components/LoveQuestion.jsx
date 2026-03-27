@@ -26,7 +26,7 @@ export default function LoveQuestion({ onNext }) {
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         style={{
-          position: "absolute",
+          position: "fixed",
           top: pos.top,
           left: pos.left,
           padding: "10px 20px",

@@ -4,7 +4,7 @@ export default function FutureSection({ onNext }) {
   const [show, setShow] = useState(false);
 
   const cards = [
-    "we’ll take our first trip together… closing the distance between us ✈️",
+    "We’ll take our first trip together… closing the distance between us ✈️",
     "Every birthday, every moment… together, just the way it should be 🎂",
     "Watching movies together… not through Discord, but right next to you 🎬",
     "Playing games side by side… and me winning every time 😏🎮 and MANY MORE",
