@@ -75,12 +75,12 @@ export default function LoveMap({ onFinish }) {
       {/* 🌍 MAP */}
       <div
         style={{
-          height: "clamp(250px, 50vh, 400px)", // ✅ responsive height
+          height: "clamp(250px, 50vh, 400px)", //  responsive height
           marginTop: "10px",
         }}
       >
         <MapContainer
-          bounds={[sriLanka, japan]} // ✅ auto-fit both locations
+          bounds={[sriLanka, japan]} //  auto-fit both locations
           boundsOptions={{ padding: [30, 30] }}
           style={{ height: "100%", borderRadius: "15px" }}
           scrollWheelZoom={false}
@@ -94,12 +94,12 @@ export default function LoveMap({ onFinish }) {
 
           {/* 💓 Sri Lanka */}
           <Marker position={sriLanka} icon={heartIcon}>
-            <Popup>My Heart 💖 (Sri Lanka)</Popup>
+            <Popup>My Heart 💖 </Popup>
           </Marker>
 
           {/* 💓 Japan */}
           <Marker position={japan} icon={heartIcon}>
-            <Popup>You 💕 (Japan)</Popup>
+            <Popup>Me 💕 </Popup>
           </Marker>
 
           {/* ✈️ Moving Plane */}

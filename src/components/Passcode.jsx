@@ -30,7 +30,7 @@ export default function Passcode({ onSuccess }) {
           onSuccess(); // 🔓 auto unlock after delay
         }, 2000);
       } else {
-        setMessage(`Wrong 😏 Try again (${newAttempts}/5)`);
+        setMessage(`Wrong 😏 Try again`);
       }
     }
   };
