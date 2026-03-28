@@ -11,7 +11,16 @@ export default function FinalSection() {
     <div className="final-container">
       {show && (
         <>
-          <h1 className="fadeText">I love you ❤️</h1>
+          <h1
+            className="fadeText"
+            style={{
+              background: "linear-gradient(45deg, #49080e, #e7141b)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+            }}
+          >
+            I love you ❤️
+          </h1>
         </>
       )}
 
